@@ -1,0 +1,10 @@
+#topBanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(250, 250, 255);
+    border: solid 1vh rgb(230, 230, 255);
+    padding-left: 1vh;
+}
