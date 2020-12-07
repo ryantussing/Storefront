@@ -45,9 +45,38 @@
     width: 100%; height: 100vh;
     line-height: 0%;
 }
-    #pageBody-title {
+    #pageBody-section1 {
         border: solid 1px black;
     }
-        #pageBody-title-h1 {
+        #pageBody-section1-refText {
             border: solid 1px green;
+            font-size: 12pt;
         }
+    #container {
+        border: blueviolet solid 1vh;
+        height: auto;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+        .example-item {
+            border: solid 1px blue;
+            width: 25vh;
+            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-top: 1vh;
+        }
+            .example-picture {
+                width: 20vh;
+                height: 20vh;
+            }
+            .example-text {
+                border: 1px solid black;
+            }
