@@ -47,13 +47,30 @@
     width: 80vw; height: 100vh;
     line-height: 0%;
 }
-    #pageBody-section1 {
-        border: solid 1px black;
+    #pageBody-cart {
+        border: 1px solid teal;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-        #pageBody-section1-refText {
-            border: solid 1px green;
-            font-size: 12pt;
+        #pageBody-cartMenu {
+            border: solid 1px black;
+            width: auto;
+            padding: 2px;
         }
+            #pageBody-cartText {
+                border: solid 1px green;
+                font-size: 12pt;
+                width: 10vw;
+                text-align: center;
+            }
+            #pageBody-downArrow {
+                width: 4vw;
+                height: 4vh;
+                border: 2px solid orange;
+            }
     #container {
         border: blueviolet solid 1vh;
         height: auto;
