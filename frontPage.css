@@ -1,6 +1,6 @@
 #topBanner {
-    position: fixed; top: 0; left: 0;
-    height: 10vh;  width: 100%;
+    position: absolute; top: 0; left: 10vw;
+    height: 10vh;  width: 80vw;
     background-color: rgb(250, 250, 255);
     border: solid 1vh rgb(230, 230, 255);
     display: flex;
@@ -30,7 +30,7 @@
         padding-right: 1vh;
         padding-top: 3vh;
         /* border: solid black 1px; */
-        position: fixed; right: 0;
+        position: absolute; right: 0;
         line-height: 0%;
     }
         #shoppingCartImg {
@@ -40,20 +40,46 @@
         }
         
 #pageBody {
-    position: fixed; top: 12vh; left: 0vh;
-    border: solid 1vh green;
-    width: 100%; height: 100vh;
+    position: absolute; top: 12vh; left: 10vw;
+    /* border: solid 1vh green; */
+    border-left: solid 1vh rgb(230, 230, 255);
+    border-right: solid 1vh rgb(230, 230, 255);
+    width: 80vw; height: 100vh;
     line-height: 0%;
 }
-    #pageBody-section1 {
-        border: solid 1px black;
+    #pageBody-cart {
+        border: 1px solid black;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-        #pageBody-section1-refText {
-            border: solid 1px green;
-            font-size: 12pt;
+        #pageBody-cartMenu {
+            /* border: solid 1px black; */
+            width: auto;
+            height: auto;
+            padding: 2px;
         }
+            #pageBody-cartText {
+                /* border: solid 1px green; */
+                font-size: 12pt;
+                width: 10vw;
+                text-align: center;
+            }
+            #pageBody-downArrow {
+                width: 4vw;
+                height: 4vh;
+                /* border: 2px solid orange; */
+                text-align: center;
+            }
+                #down-arrow-img {
+                    width: 20px;
+                    height: 20px;
+                    padding-top: 1vh;
+                }
     #container {
-        border: blueviolet solid 1vh;
+        /* border: blueviolet solid 1vh; */
         height: auto;
 
         display: flex;
@@ -64,7 +90,7 @@
         padding-bottom: 1vh;
     }
         .example-item {
-            border: solid 1px blue;
+            border: solid 1px rgb(230, 230, 255);
             width: 25vh;
             
             display: flex;
