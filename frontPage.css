@@ -44,40 +44,47 @@
     /* border: solid 1vh green; */
     border-left: solid 1vh rgb(230, 230, 255);
     border-right: solid 1vh rgb(230, 230, 255);
-    width: 80vw; height: 100vh;
+    width: 80vw; height: auto;
     line-height: 0%;
 }
-    #pageBody-cart {
-        border: 1px solid black;
-        background-color: rgb(240, 240, 240);
+    #pageBody-cartDiv {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-between;
+        border: solid 1px black;
     }
-        #pageBody-cartMenu {
-            /* border: solid 1px black; */
-            width: auto;
-            height: auto;
-            padding: 2px;
+        #pageBody-cart {
+            border: 1px solid black;
+            background-color: rgb(240, 240, 240);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-            #pageBody-cartText {
-                /* border: solid 1px green; */
-                font-size: 12pt;
-                width: 10vw;
-                text-align: center;
+            #pageBody-cartMenu {
+                /* border: solid 1px black; */
+                width: auto;
+                height: auto;
+                padding: 2px;
             }
-            #pageBody-downArrow {
-                width: 4vw;
-                height: 4vh;
-                /* border: 2px solid orange; */
-                text-align: center;
-            }
-                #down-arrow-img {
-                    width: 20px;
-                    height: 20px;
-                    padding-top: 1vh;
+                #pageBody-cartText {
+                    /* border: solid 1px green; */
+                    font-size: 12pt;
+                    width: 10vw;
+                    text-align: center;
                 }
+                #pageBody-downArrow {
+                    width: 4vw;
+                    height: 4vh;
+                    /* border: 2px solid orange; */
+                    text-align: center;
+                }
+                    #down-arrow-img {
+                        width: 20px;
+                        height: 20px;
+                        padding-top: 1vh;
+                    }
     #container {
         /* border: blueviolet solid 1vh; */
         height: auto;
