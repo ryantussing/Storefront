@@ -7,21 +7,21 @@ $downArrow.onclick = onArrow
 $shoppingCartIcon.onclick = onArrow
 function onArrow() {
 
-    // if ( (clicks%2) == 0) {
+    if ( (clicks%2) == 0) {
         const $userCart = document.createElement("section")
-        $userCart.innerHTML = `<section id="userCart"></section>`
+        $userCart.id = "userCart"
         $userCart.style.border = "1px solid rgb(230, 230, 255)"
         $userCart.style.backgroundColor = "rgb(240, 240, 240)"
         $downArrow.src = "Pictures/UpArrow.png"
         cart.append($userCart)
         clicks++
-    // }
-    // else if ( (clicks%2) == 1) {
-    //     $userCart = document.querySelector("section#userCart")
-    //     $downArrow.src = "Pictures/DownArrow.png"
-    //     $userCart.parentNode.removeChild($userCart)
-    //     clicks++
-    // }
+    }
+    else if ( (clicks%2) == 1) {
+        $userCart = document.querySelector("section#userCart")
+        $downArrow.src = "Pictures/DownArrow.png"
+        cart.removeChild($userCart)
+        clicks++
+    }
 
 }
 
@@ -34,7 +34,7 @@ function addProducts() {
     $productContainer.style.cssText = "height: auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; padding-top: 1vh; padding-bottom: 1vh; text-align: center";
     $pageBody.append($productContainer)
 
-    data.posters.forEach(poster => {
+    data.posters.forEach( (poster, index) => {
         const $section = document.createElement("section")
         $section.style.cssText = "text-align: center; border: solid 1px rgb(230, 230, 255); width: 25vw; display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center; padding-top: 1vh; padding-bottom: 1vh; margin-top: 5px; margin-bottom: 5px;"
 
@@ -51,23 +51,46 @@ function addProducts() {
 
         const $shoppingBar = document.createElement("section")
         $shoppingBar.style.cssText = "border: solid 1px rgb(230, 230, 255); width: 20vw; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; width: 20vw; text-align: center; padding: 1px;"
-            const $plus = document.createElement("img")
-                $plus.src = "Pictures/Minus.png"
-                $plus.style.cssText = "width: 20px; height: 20px;"
-            $shoppingBar.append($plus)
+            // const $minus = document.createElement("img")
+            //     $minus.setAttribute("data-name", poster.name)
+            //     $minus.src = "Pictures/Minus.png"
+            //     $minus.id = poster.name
+            //     $minus.style.cssText = "width: 20px; height: 20px;"
+            //     $minus.onclick = removeFromCart
+            // $shoppingBar.append($minus)
             const $shoppingBarText = document.createElement("h3")
-                $shoppingBarText.innerHTML = "<h3>Q U A N T I T Y</h3>"
+                $shoppingBarText.innerHTML = `Q U A N T I T Y`
                 $shoppingBarText.style.cssText = "font-size: 12px;"
             $shoppingBar.append($shoppingBarText)
-            const $minus = document.createElement("img")
-                $minus.src = "Pictures/Plus.png"
-                $minus.style.cssText = "width: 20px; height: 20px; line-height: 0;"
-            $shoppingBar.append($minus)
+            const $plus = document.createElement("img")
+                $plus.setAttribute("data-name", poster.name)
+                $plus.onclick = addToCart
+                $plus.src = "Pictures/Plus.png"
+                $plus.id = poster.name
+                $plus.style.cssText = "width: 20px; height: 20px; line-height: 0;"
+            $shoppingBar.append($plus)
         $section.append($shoppingBar)
 
         $productContainer.append($section)
     })
 }
+
+function addToCart(event) {
+    var name = event.target.getAttribute("data-name")
+    const $userCart = document.querySelector("section#userCart")
+    const $item = document.createElement("h3")
+    $item.style.cssText = "font-size: 12px; padding: 2px;"
+    $item.id = name
+    $item.innerHTML = `${name}`
+    $userCart.append($item)
+}
+
+// function removeFromCart(event) {
+//     var name = event.target.getAttribute("data-name")
+//     const $userCart = document.querySelector("section#userCart")
+//     const $item = document.querySelector("h3#"+name+"id")
+//     $userCart.removeChild($item)
+// }
 
 function loadData() {
 
@@ -119,7 +142,7 @@ function loadData() {
         },
 
         {
-            "name" : "Guardians of the Galaxy Poster",
+            "name" : "Guardians Poster",
             "imgSource" : "Pictures/GOTGPoster.jpg"
         },
 
